@@ -326,7 +326,7 @@ $(function () {
     var AW=  ($(window).width()  - 580) / 2;
     $("#Agreement-style").css({left: AW});
     var fW = ($(window).width() - $("#forgetPassword").width()) / 2;
-    var fH = ($(window).height() - $("#forgetPassword").height()) / 2;
+    var fH = ($(window).height() - 250)/2;
     $("#forgetPassword").css({left: fW, top: fH});
 
 
@@ -496,25 +496,15 @@ $(function () {
 
 
    /* //点击登录
+    $("#loginSubmit").submit(function()  {
 
-
-    $("#login").on("click",function () {
-        var tokens = $('#token').val();
-        var name=$("#loginEmail").val();
-        var nameP=$("#loginP");
-       var namePassword=$("#password").val();
-        $.post('/user/email',{'_token':tokens,'email':name},function(data){
-            if(data == 0){
-                nameP.css({display: "block"}).html("This user does not exist");
-                return false;
-            } else {
-                $.post('/user/password',{'_token':tokens,'password':namePassword},function(data){
-                    console.log(data);
-                })
+        $(this).ajaxSubmit({
+            success: function(data) { // data 保存提交后返回的数据，一般为 json 数据
+                console.log(data);
             }
         });
-
-    })*/
-
-
+        return false;
+    });*/
 });
+
+
