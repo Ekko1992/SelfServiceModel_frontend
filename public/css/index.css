@@ -89,7 +89,7 @@ footer{
     box-shadow: 0 -2px 6px #d7d7d7;
 }
 
-#login-style,#register-style,#setting-style{
+#login-style,#register-style,#setting-style,#forgetPassword{
     position: absolute;
     width: 480px;
     left:50%;
@@ -102,7 +102,7 @@ footer{
     display: none;
 }
 #login-style{
-  height: 440px;
+  height: 380px;
   margin-top: -220px;
   margin-left: -240px;
 }
@@ -762,13 +762,15 @@ footer{
     font-size: 14px;
     color: #2f9dd8;
     font-family: robotoMedium;
+    cursor: pointer;
 }
 
 .modify-foot{
     width: 150px!important;
-    margin-top: 130px;
+    margin-top: 70px;
+    margin-bottom: 30px;
 }
-#setting{
+#setting,.promptProgress{
     width: 100%;
     height: 100%;
     position: fixed;
@@ -954,6 +956,75 @@ footer{
     display: none;
     z-index: 50;
 }
+
+.promptText{
+    width: 580px;
+    height: 410px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top:0;
+    z-index: 999;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    display: none;
+}
+.promptSetting {
+    position: absolute;
+    z-index: 10;
+    top:95px;
+    left: 255px;
+    width: 70px;
+    height: 70px;
+
+}
+.promptText h2{
+    font-size: 18px;
+    font-family: robotoLight;
+    color: #000;
+    text-align: center;
+}
+.promptText p{
+    font-size: 14px;
+    font-family: robotoThin;
+    color: #000;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 70px;
+}
+.loader {
+    display: block;
+    margin: 55px auto;
+    -webkit-animation: load8 1.5s infinite linear;
+    animation: load8 1.5s infinite linear;
+}
+
+@-webkit-keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
 .all-event ul li{
     width: 130px;
     display:inline-block;
@@ -992,10 +1063,10 @@ footer{
     z-index: 10;
 }
 
-.all-event ul li:nth-child(6n+0){
+/*.all-event ul li:nth-child(6n+0){
     margin-right: 0;
     float: right;
-}
+}*/
 .all-event{
     /*width: auto;!important;*/
     margin-top: 30px;
@@ -1182,6 +1253,7 @@ form:nth-child(3){
     height: 60px;
 }
 .news-back{
+    width: 61px;
     font-size: 14px;
     color: #afb1b3;
     font-family:robotoMedium;
@@ -1772,6 +1844,26 @@ form:nth-child(3){
     z-index: 30;
     display: none;
 }
+
+#downloadType{
+    display: block;
+    width: 205px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    color: #000;
+    font-size: 14px;
+    font-family: robotoMedium;
+    border:2px solid #7fbb42;
+    outline: none;
+    cursor: pointer;
+    float: right;
+    margin-right: 20px;
+}
+
 
 .background{
     width: 100%;
