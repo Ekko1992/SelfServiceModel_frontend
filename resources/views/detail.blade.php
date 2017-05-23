@@ -21,7 +21,13 @@
                         <i class="material-icons">keyboard_arrow_up</i>
                     </span>
                     <input type="submit" id="buttons" value="Download">
-                    <input type="hidden" id="img_id" name="img_id" value="{{$id}}">
+                    <select name="checkbox" id="downloadType">
+                        <option value="0">Please select download type</option>
+                        <option value="1">XML</option>
+                        <option value="2">PDF</option>
+                        <option value="3">XML and PDF</option>
+                    </select>
+                    <input type="hidden" id="img_id" name="event_id" value="{{$id}}">
                 </div>
                 <div class="allDataStatistics">
                     <div>
@@ -132,7 +138,42 @@
     <script type="text/javascript" src="{{ asset('js/highcharts-more.js') }}"></script>
     <script type="text/javascript">
         $(function () {
+
+
+            var resultsH =$(".details-center-right").height()+20;
+            var detailsEventsT =$(".details-center-left-text").offset().top - 100;
+            $(".clickHide").on("click",function () {
+
+                var text=$(this).find("i").text();
+                var WalkHow =resultsH-60;
+                var muchHow =detailsEventsT - WalkHow;
+
+                if(text=="keyboard_arrow_up"){
+                    $(".details-center-right").animate({
+                        height:60
+                    },1000);
+                    $(this).find("i").text("keyboard_arrow_down");
+                    $(".details-center-left-text").animate({
+                        top:muchHow
+                    },1000)
+                } else {
+                    $(".details-center-right").animate({
+                        height:resultsH
+                    },1000);
+                    $(this).find("i").text("keyboard_arrow_up");
+                    $(".details-center-left-text").animate({
+                        top:detailsEventsT
+                    },1000)
+                }
+            });
+
+
+
+
+
+
             var  id = $('#img_id').val();
+            console.log(id);
             $.ajax({
                 url: '/details/' + id,
                 type: "get",

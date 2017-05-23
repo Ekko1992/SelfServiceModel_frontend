@@ -23,16 +23,16 @@
         </div>
         <div class="clearfix"></div>
     </section>
-    <!-- <section class="promptProgress">
-        <div class="Background-shadow"></div> -->
-        <!-- <div class="promptText">
+     <section class="promptProgress">
+        <div class="Background-shadow"></div>
+         <div class="promptText">
             <i class="material-icons character-Close">clear</i>
             <img class="loader" src="{{ asset('image/map.png') }}" alt="">
             <img class="promptSetting" src="{{ asset('image/setting.jpg') }}" alt="">
             <h2>Please wait while we're processing your data.</h2>
             <p>This may take a few minutes. Thank you for your patience.</p>
-        </div> -->
-    <!-- </section> -->
+        </div>
+     </section>
     @include('auth.setting')
 @endsection
 @section('pageEnd')
@@ -59,7 +59,7 @@
                             "</div>" +
                             "</div>" +
                             "<div class='recent-event-delete'>" +
-                            "<img src='{{ asset('image/delete.png') }}' alt=''>" +
+                            "<img  class='imgClick' src='{{ asset('image/delete.png') }}' alt=''>" +
                             "<a> </a>"+
                             "</div>" +
                             "</li>";
@@ -86,8 +86,9 @@
                                     headers:{'X-CSRF-TOKEN':$('meta[name="_token"]').attr('content')},
                                     success:function(data){
                                         var widthf =$(".recent"+ val.id+"").find('.progressBar').width();
-                                        var widths=$(".recent"+val.id+"").find('.container').width();
-                                        if(widthf == widths){
+                                        var widths=$(".recent"+val.id+"").find('.container').width()- 10;
+                                        console.log(widths,widthf);
+                                        if(widthf >= widths){
                                             $(".recent"+val.id+"").find('.aprogressBar').css({display:"none"});
                                             clearInterval(set);
                                         }
@@ -137,7 +138,7 @@
                     var prompW = $(".promptText").width();
                     var dH = ($(window).height() - prompH) / 2;
                     var dW = ($(window).width() - prompW) / 2;
-                    $(".promptText").css({left:dW,top:dH});
+                    $(".promptText").css({left:dW,top:dH,display:"block"});
                    $(".promptProgress").fadeIn();
                 } else {
                     $(this).attr("href",domain+id);
