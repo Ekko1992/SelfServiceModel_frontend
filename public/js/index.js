@@ -128,10 +128,14 @@ $(function () {
     });
 
     $(".data-title").find("i").on("click",function () {
-        $(".activityInformation").fadeIn();
-        var aH = ($(window).height() - $(".activityText").height()) / 2;
-        var aW = ($(window).width() - $(".activityText").width()) / 2;
-        $(".activityText").css({left:aW, top:aH});
+      $(".activityInformation").css({display: 'flex', opacity:0});
+        $(".activityInformation").animate({
+          opacity:1,
+        }, 500);
+        // $(".activityInformation").fadeIn();
+        // var aH = ($(window).height() - $(".activityText").height()) / 2;
+        // var aW = ($(window).width() - $(".activityText").width()) / 2;
+        // $(".activityText").css({left:aW, top:aH});
     });
 
     $(".activityText").find("i").on("click",function () {
@@ -154,9 +158,9 @@ $(function () {
 
 
     // 重新设置个人信息
-        var dW = ($(window).width() - $("#setting-style").width()) / 2;
-        var dH = ($(window).height() - $("#setting-style").height()) / 2;
-        $("#setting-style").css({left: dW, top: dH});
+        // var dW = ($(window).width() - $("#setting-style").width()) / 2;
+        // var dH = ($(window).height() - $("#setting-style").height()) / 2;
+        // $("#setting-style").css({left: dW, top: dH});
         //更新资料
         $("#setting-return").on("click",function () {
             $("#LoginText").fadeOut();
@@ -313,16 +317,16 @@ $(function () {
 
 
     //登录注册忘记密码自动居中
-    var lW = ($(window).width() - $("#login-style").width()) / 2;
-    var lH = ($(window).height() - $("#login-style").height()) / 2;
-    $("#login-style").css({left: lW, top: lH});
-    var rW = ($(window).width() - $("#register-style").width()) / 2;
-    var rH = ($(window).height() - $("#register-style").height()) / 2;
-    $("#register-style").css({left: rW, top: rH});
+    // var lW = ($(window).width() - $("#login-style").width()) / 2;
+    // var lH = ($(window).height() - $("#login-style").height()) / 2;
+    // $("#login-style").css({left: lW, top: lH});
+    // var rW = ($(window).width() - $("#register-style").width()) / 2;
+    // var rH = ($(window).height() - $("#register-style").height()) / 2;
+    // $("#register-style").css({left: rW, top: rH});
     var AW=  ($(window).width()  - 580) / 2;
     $("#Agreement-style").css({left: AW});
     var fW = ($(window).width() - $("#forgetPassword").width()) / 2;
-    var fH = ($(window).height() - $("#forgetPassword").height()) / 2;
+    var fH = ($(window).height() - 250)/2;
     $("#forgetPassword").css({left: fW, top: fH});
 
 
@@ -492,25 +496,15 @@ $(function () {
 
 
    /* //点击登录
+    $("#loginSubmit").submit(function()  {
 
-
-    $("#login").on("click",function () {
-        var tokens = $('#token').val();
-        var name=$("#loginEmail").val();
-        var nameP=$("#loginP");
-       var namePassword=$("#password").val();
-        $.post('/user/email',{'_token':tokens,'email':name},function(data){
-            if(data == 0){
-                nameP.css({display: "block"}).html("This user does not exist");
-                return false;
-            } else {
-                $.post('/user/password',{'_token':tokens,'password':namePassword},function(data){
-                    console.log(data);
-                })
+        $(this).ajaxSubmit({
+            success: function(data) { // data 保存提交后返回的数据，一般为 json 数据
+                console.log(data);
             }
         });
-
-    })*/
-
-
+        return false;
+    });*/
 });
+
+

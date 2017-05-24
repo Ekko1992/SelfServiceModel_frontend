@@ -1,1 +1,1 @@
-#SelfServiceModel_frontend
+#Self_service_model

@@ -25,9 +25,9 @@
                 <a class="header-login" id="header-login">Login</a>
             </span>
         @else
-            <p>Welcome, {{ Auth::user()->name }} !</p>&nbsp;
-            <span><a class="header-register settingDate" >My Profile</a></span>&numsp;&numsp;
-            |&numsp;&numsp;
+            <p>Welcome, {{ Auth::user()->name }} !</p>
+            <span><a class="header-register settingDate" >My Profile</a></span><div>&numsp;&numsp;
+            |&numsp;&numsp;</div>
             <span><a class="header-login" href="{{ url('/logout') }}">Logout</a></span>
         @endif
     </div>
@@ -83,7 +83,6 @@
 </html>
 <!-- JavaScripts -->
 <script type="text/javascript" src="{{ asset('js/jquery-1.9.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.form.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/jquery.cookie.js') }}"></script>
-
 @section('content')
