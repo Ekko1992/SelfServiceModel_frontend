@@ -134,7 +134,7 @@
         $(function () {
             var  id = $('#img_id').val();
             $.ajax({
-                url: '/details/' + id,
+                url: '/detail/' + id,
                 type: "get",
                 dataType: "json",
                 headers: {'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')},

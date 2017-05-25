@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+<face>
+<position>0.376812 0.071038 0.054348 0.142077</position>
+<age>0-20</age>
+<age_conf>0.044979</age_conf>
+<gender>male</gender>
+<gender_conf>0.618856</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.915740</race_conf>
+<loyalty>middle</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.297101 0.169399 0.043478 0.147541</position>
+<age>0-20</age>
+<age_conf>0.045141</age_conf>
+<gender>female</gender>
+<gender_conf>0.668196</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.960394</race_conf>
+<loyalty>middle</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.518116 0.158470 0.028986 0.114754</position>
+<age>0-20</age>
+<age_conf>0.045224</age_conf>
+<gender>male</gender>
+<gender_conf>0.509284</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.969044</race_conf>
+<loyalty>middle</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.554348 0.169399 0.047101 0.147541</position>
+<age>0-20</age>
+<age_conf>0.045109</age_conf>
+<gender>female</gender>
+<gender_conf>0.526174</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.969312</race_conf>
+<loyalty>middle</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.652174 0.174863 0.039855 0.136612</position>
+<age>0-20</age>
+<age_conf>0.045104</age_conf>
+<gender>female</gender>
+<gender_conf>0.560950</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.926956</race_conf>
+<loyalty>middle</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.192029 0.213115 0.054348 0.142077</position>
+<age>0-20</age>
+<age_conf>0.044991</age_conf>
+<gender>female</gender>
+<gender_conf>0.773576</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.951297</race_conf>
+<loyalty>middle</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.275362 0.218579 0.057971 0.147541</position>
+<age>0-20</age>
+<age_conf>0.044931</age_conf>
+<gender>female</gender>
+<gender_conf>0.675688</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.963155</race_conf>
+<loyalty>middle</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+</result>

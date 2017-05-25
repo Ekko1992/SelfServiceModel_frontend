@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+<face>
+<position>0.393750 0.196094 0.035937 0.063281</position>
+<age>30-35</age>
+<age_conf>0.447567</age_conf>
+<gender>female</gender>
+<gender_conf>0.941416</gender_conf>
+<race>Asian</race>
+<race_conf>0.684395</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>0.868421052632</loyalty_conf>
+</face>
+</result>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+<face>
+<position>0.765854 0.118081 0.195122 0.332103</position>
+<age>35-40</age>
+<age_conf>0.601225</age_conf>
+<gender>male</gender>
+<gender_conf>0.999946</gender_conf>
+<race>Hispanic</race>
+<race_conf>0.631203</race_conf>
+<loyalty>middle</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.414634 0.147601 0.095122 0.214022</position>
+<age>40-45</age>
+<age_conf>0.77378</age_conf>
+<gender>female</gender>
+<gender_conf>0.999764</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.669437</race_conf>
+<loyalty>middle</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.585366 0.140221 0.085366 0.169742</position>
+<age>35-40</age>
+<age_conf>0.48746</age_conf>
+<gender>male</gender>
+<gender_conf>0.982594</gender_conf>
+<race>African</race>
+<race_conf>0.997361</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.202439 0.184502 0.100000 0.225092</position>
+<age>40-45</age>
+<age_conf>0.830387</age_conf>
+<gender>female</gender>
+<gender_conf>0.669074</gender_conf>
+<race>African</race>
+<race_conf>0.37313</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.031707 0.195572 0.141463 0.295203</position>
+<age>20-25</age>
+<age_conf>0.944544</age_conf>
+<gender>male</gender>
+<gender_conf>0.999831</gender_conf>
+<race>Hispanic</race>
+<race_conf>0.816445</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.639024 0.343173 0.095122 0.221402</position>
+<age>20-25</age>
+<age_conf>0.561774</age_conf>
+<gender>female</gender>
+<gender_conf>0.999985</gender_conf>
+<race>African</race>
+<race_conf>0.970032</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.351220 0.612546 0.112195 0.258303</position>
+<age>35-40</age>
+<age_conf>0.971019</age_conf>
+<gender>female</gender>
+<gender_conf>0.99953</gender_conf>
+<race>African</race>
+<race_conf>0.876778</race_conf>
+<loyalty>middle</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+</result>

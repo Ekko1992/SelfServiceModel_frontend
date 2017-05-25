@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+<face>
+<position>0.303646 0.228906 0.031771 0.060156</position>
+<age>20-25</age>
+<age_conf>0.616804</age_conf>
+<gender>female</gender>
+<gender_conf>0.99982</gender_conf>
+<race>Hispanic</race>
+<race_conf>0.544374</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>0.918699186992</loyalty_conf>
+</face>
+</result>

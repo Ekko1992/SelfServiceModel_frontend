@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+<face>
+<position>0.343750 0.402344 0.044271 0.084375</position>
+<age>0-20</age>
+<age_conf>0.995677</age_conf>
+<gender>female</gender>
+<gender_conf>0.994139</gender_conf>
+<race>African</race>
+<race_conf>0.970862</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>0.466666666667</loyalty_conf>
+</face>
+</result>

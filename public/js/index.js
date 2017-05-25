@@ -66,9 +66,34 @@ $(function () {
         $("#Agreement-style").fadeOut();
         $("#Prompt-login").find("input").prop("checked",true);
     });
+    $(".clickHide").on("click",function () {
+      var text=$(this).find("i").text();
+      if(text=="keyboard_arrow_up"){
+          $(".details-center-right").animate({
+              height:63
+          },1000);
+          $(this).find("i").text("keyboard_arrow_down");
+          // $(".details-center-left-text").animate({
+          //     top:140
+          // },1000)
+      } else {
+          $('.dataExhibition').height();
+          $(".details-center-right").animate({
+              height:$('.dataExhibition').height()+55
+          },1000);
+          setTimeout(function(){
+            $('.details-center-right').css('heigth', 'auto')
+          }, 1001)
+          $(this).find("i").text("keyboard_arrow_up");
+          // $(".details-center-left-text").animate({
+          //     top:380
+          // },1000)
+      }
+  });
 
     $(".promptText").find("i").on("click",function () {
        $(".promptProgress").fadeOut();
+       
     });
 
     $("#forget-return").on("click",function () {
@@ -80,8 +105,18 @@ $(function () {
         $("#forgetPassword").fadeIn();
     });
 
-
-
+    $(".insideHeaderHamburgerMenu").find("i").on("click",function () {
+      $(".mini-navigation").toggle();
+    });
+    $(".mini-navigation").find("li").on("click",function(){
+      $(".mini-navigation").toggle();
+    })
+    $(".downloadOptions").on("click", function(){
+      $(".layoutOptions").toggle();
+    })
+    $(".optionsForDrop").on("click", function(){
+      $(".layoutOptions").toggle();
+    })
     /***********************全选 全不选 以及删除*********************************/
     $(".select-text").on("click", function () {
         var size=$(".PictureShow").find("li").size();
@@ -214,7 +249,7 @@ $(function () {
             var text=$("#settingPhone").parent().find("p");
             var phone=/\d{3,18}$/;
             if (!phone.test($(this).val())) {
-                text.css({display: "block"}).html("Please enter the correct phone number");
+                text.css({display: "block"}).html("Please enter a valid phone number (XXX-XXX-XXXX)");
                 return false;
             } else {
                 text.css({display: "none"})
@@ -224,7 +259,7 @@ $(function () {
             var text = $(this).parent().find("p");
             var email = /^\w{3,}@\w+(\.\w+)+$/;
             if (!email.test($(this).val())) {
-                text.css({display: "block"}).html("Please enter the correct mailbox :xxx@qq.com");
+                text.css({display: "block"}).html("Please enter a valid email address :mail@example.com");
                 return false;
             } else {
                 text.css({display: "none"})
@@ -243,7 +278,7 @@ $(function () {
             var password=$("#settingPassword").val();
             var text=$(this).parent().find("p");
             if($(this).val()!=password){
-                text.css({display:"block"}).html("Two passwords are not the same");
+                text.css({display:"block"}).html("Passwords does not match, please confirm the password!");
                 return false;
             }else {
                 text.css({display:"none"})
@@ -270,7 +305,7 @@ $(function () {
             var phoneText=$("#settingPhone").parent().find("p");
             var phone=/\d{3,18}$/;
             if (!phone.test($("#settingPhone").val())) {
-                phoneText.css({display: "block"}).html("Please enter the correct phone number");
+                phoneText.css({display: "block"}).html("Please enter a valid phone number (XXX-XXX-XXXX)");
                 return false;
             } else {
                 phoneText.css({display: "none"})
@@ -280,7 +315,7 @@ $(function () {
             var emailText = $("#settingEmail").parent().find("p");
             var email = /^\w{3,}@\w+(\.\w+)+$/;
             if (!email.test($("#settingEmail").val())) {
-                emailText.css({display: "block"}).html("Please enter the correct mailbox :xxx@qq.com");
+                emailText.css({display: "block"}).html("Please enter a valid email address :mail@example.com");
                 return false;
             } else {
                 emailText.css({display: "none"})
@@ -294,7 +329,7 @@ $(function () {
             var password=$("#settingPassword").val();
             if($("#settingPasswordConfirm").val()!=password){
                 var text=$("#settingPasswordConfirm").parent().find("p");
-                text.css({display:"block"}).html("Two passwords are not the same");
+                text.css({display:"block"}).html("Passwords does not match, please confirm the password!");
                 return false;
             }
             $.ajax({
@@ -323,11 +358,11 @@ $(function () {
     // var rW = ($(window).width() - $("#register-style").width()) / 2;
     // var rH = ($(window).height() - $("#register-style").height()) / 2;
     // $("#register-style").css({left: rW, top: rH});
-    var AW=  ($(window).width()  - 580) / 2;
-    $("#Agreement-style").css({left: AW});
-    var fW = ($(window).width() - $("#forgetPassword").width()) / 2;
-    var fH = ($(window).height() - 250)/2;
-    $("#forgetPassword").css({left: fW, top: fH});
+    // var AW=  ($(window).width()  - 580) / 2;
+    // $("#Agreement-style").css({left: AW});
+    // var fW = ($(window).width() - $("#forgetPassword").width()) / 2;
+    // var fH = ($(window).height() - $("#forgetPassword").height()) / 2;
+    // $("#forgetPassword").css({left: fW, top: fH});
 
 
     //注册正则验证
@@ -353,7 +388,7 @@ $(function () {
         var text = $(this).parent().find("p");
         var phone=/\d{3,18}$/;
         if (!phone.test($(this).val())) {
-            text.css({display: "block"}).html("Please enter the correct phone number");
+            text.css({display: "block"}).html("Please enter a valid phone number (XXX-XXX-XXXX)");
             return false;
         } else {
             text.css({display: "none"})
@@ -373,7 +408,7 @@ $(function () {
         var text = $(this).parent().find("p");
         var email = /^\w{3,}@\w+(\.\w+)+$/;
         if (!email.test($(this).val())) {
-            text.css({display: "block"}).html("Please enter the correct mailbox :xxx@qq.com");
+            text.css({display: "block"}).html("  Please enter a valid email address  : mail@example.com");
             return false;
         } else {
             var token = $('#token').val();
@@ -402,7 +437,7 @@ $(function () {
         var text = $(this).parent().find("p");
         var m = $("#registerPassword").val();
         if ($(this).val() != m) {
-            text.css({display: "block"}).html("Two passwords are not the same");
+            text.css({display: "block"}).html("Passwords does not match, please confirm the password!");
             return false;
         } else {
             text.css({display: "none"})
@@ -429,7 +464,7 @@ $(function () {
         var phone=/\d{3,18}$/;
         var phoneP = $("#registerPhone").parent().find("p");
         if (!phone.test($("#registerPhone").val())){
-            phoneP.css({display: "block"}).html("Please enter the correct phone number");
+            phoneP.css({display: "block"}).html("Please enter a valid phone number (XXX-XXX-XXXX)");
             return false;
         } else {
             phoneP.css({display: "none"})
@@ -447,7 +482,7 @@ $(function () {
         var password = $("#registerPassword").val();
         var PasswordConfirmP = $("#registerPasswordConfirm").parent().find("p");
         if ($("#registerPasswordConfirm").val() != password) {
-            PasswordConfirmP.css({display: "block"}).html("Two passwords are not the same");
+            PasswordConfirmP.css({display: "block"}).html("Passwords does not match, please confirm the password!");
             return false;
         } else {
             PasswordConfirmP.css({display: "none"})
@@ -456,11 +491,11 @@ $(function () {
         var EmailP = $("#registerEmail").parent().find("p");
         var email = /^\w{3,}@\w+(\.\w+)+$/;
         if (!email.test($("#registerEmail").val())) {
-            EmailP.css({display: "block"}).html("Please enter the correct mailbox :xxx@qq.com");
+            EmailP.css({display: "block"}).html("  Please enter a valid email address  : mail@example.com");
             return false;
         }
         if($("input[name=checkboxs]").prop('checked')!=true){
-            alert("Please read the agreement and agree to the above requirements");
+            alert("Please accept the Terms and Condition to register");
             return false;
         }
         var EmailHide=EmailP.css("display");
@@ -475,7 +510,7 @@ $(function () {
         var text = $(this).parent().find("p");
         var email = /^\w{3,}@\w+(\.\w+)+$/;
         if (!email.test($(this).val())) {
-            text.css({display: "block"}).html("Please enter the correct mailbox :xxx@qq.com");
+            text.css({display: "block"}).html("  Please enter a valid email address  : mail@example.com");
             return false;
         } else {
             text.css({display: "none"})
@@ -489,22 +524,32 @@ $(function () {
             return false;
         } else {
             text.css({display: "none"});
-            alert("Please change the password in your mailbox");
+            alert("An email has been sent to the email address provided, Please change your password ");
             $("#forgetSubmit").submit();
         }
     });
 
 
    /* //点击登录
-    $("#loginSubmit").submit(function()  {
 
-        $(this).ajaxSubmit({
-            success: function(data) { // data 保存提交后返回的数据，一般为 json 数据
-                console.log(data);
+
+    $("#login").on("click",function () {
+        var tokens = $('#token').val();
+        var name=$("#loginEmail").val();
+        var nameP=$("#loginP");
+       var namePassword=$("#password").val();
+        $.post('/user/email',{'_token':tokens,'email':name},function(data){
+            if(data == 0){
+                nameP.css({display: "block"}).html("This user does not exist");
+                return false;
+            } else {
+                $.post('/user/password',{'_token':tokens,'password':namePassword},function(data){
+                    console.log(data);
+                })
             }
         });
-        return false;
-    });*/
+
+    })*/
+
+
 });
-
-

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+<face>
+<position>0.434896 0.245312 0.038021 0.070312</position>
+<age>20-25</age>
+<age_conf>0.889526</age_conf>
+<gender>male</gender>
+<gender_conf>0.999998</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.999723</race_conf>
+<loyalty>middle</loyalty>
+<loyalty_conf>0.1</loyalty_conf>
+</face>
+</result>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+<face>
+<position>0.480000 0.000000 0.075294 0.132492</position>
+<age>0-20</age>
+<age_conf>0.044713</age_conf>
+<gender>male</gender>
+<gender_conf>0.936007</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.987913</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.138824 0.037855 0.077647 0.123028</position>
+<age>0-20</age>
+<age_conf>0.044529</age_conf>
+<gender>male</gender>
+<gender_conf>0.893237</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.975885</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.176471 0.041009 0.063529 0.138801</position>
+<age>0-20</age>
+<age_conf>0.044919</age_conf>
+<gender>male</gender>
+<gender_conf>0.908125</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.973504</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.291765 0.075710 0.058824 0.164038</position>
+<age>0-20</age>
+<age_conf>0.045100</age_conf>
+<gender>female</gender>
+<gender_conf>0.803370</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.990037</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.496471 0.050473 0.054118 0.123028</position>
+<age>0-20</age>
+<age_conf>0.044912</age_conf>
+<gender>male</gender>
+<gender_conf>0.907256</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.983376</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.814118 0.066246 0.051765 0.164038</position>
+<age>0-20</age>
+<age_conf>0.045155</age_conf>
+<gender>male</gender>
+<gender_conf>0.688045</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.983720</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.305882 0.123028 0.056471 0.151420</position>
+<age>0-20</age>
+<age_conf>0.045084</age_conf>
+<gender>female</gender>
+<gender_conf>0.895014</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.993933</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.661176 0.113565 0.061176 0.164038</position>
+<age>0-20</age>
+<age_conf>0.045091</age_conf>
+<gender>male</gender>
+<gender_conf>0.778376</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.974922</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+</result>

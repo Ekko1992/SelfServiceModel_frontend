@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+<face>
+<position>0.847500 0.286667 0.090000 0.230000</position>
+<age>35-40</age>
+<age_conf>0.883838</age_conf>
+<gender>male</gender>
+<gender_conf>0.99917</gender_conf>
+<race>African</race>
+<race_conf>1.0</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.357500 0.236667 0.065000 0.123333</position>
+<age>35-40</age>
+<age_conf>0.223307</age_conf>
+<gender>female</gender>
+<gender_conf>0.822798</gender_conf>
+<race>African</race>
+<race_conf>0.815136</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.710000 0.283333 0.062500 0.133333</position>
+<age>25-30</age>
+<age_conf>0.449321</age_conf>
+<gender>male</gender>
+<gender_conf>0.960021</gender_conf>
+<race>African</race>
+<race_conf>0.980841</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.527500 0.303333 0.050000 0.090000</position>
+<age>45-50</age>
+<age_conf>0.595126</age_conf>
+<gender>female</gender>
+<gender_conf>0.999593</gender_conf>
+<race>African</race>
+<race_conf>0.95619</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.207500 0.383333 0.105000 0.173333</position>
+<age>0-20</age>
+<age_conf>0.999464</age_conf>
+<gender>female</gender>
+<gender_conf>0.999886</gender_conf>
+<race>African</race>
+<race_conf>0.75302</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.622500 0.180000 0.042500 0.070000</position>
+<age>0-20</age>
+<age_conf>0.98109</age_conf>
+<gender>female</gender>
+<gender_conf>0.532684</gender_conf>
+<race>African</race>
+<race_conf>0.7691</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.090000 0.306667 0.070000 0.123333</position>
+<age>35-40</age>
+<age_conf>0.436218</age_conf>
+<gender>male</gender>
+<gender_conf>0.619959</gender_conf>
+<race>African</race>
+<race_conf>0.862873</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+</result>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+<face>
+<position>0.871287 0.268473 0.090523 0.211823</position>
+<age>30-35</age>
+<age_conf>0.497154</age_conf>
+<gender>female</gender>
+<gender_conf>0.996469</gender_conf>
+<race>Asian</race>
+<race_conf>0.999184</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>0.444444444444</loyalty_conf>
+</face>
+<face>
+<position>0.256011 0.229064 0.076379 0.192118</position>
+<age>0-20</age>
+<age_conf>0.919871</age_conf>
+<gender>female</gender>
+<gender_conf>0.999536</gender_conf>
+<race>Hispanic</race>
+<race_conf>0.661671</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.046676 0.261084 0.135785 0.298030</position>
+<age>25-30</age>
+<age_conf>0.53046</age_conf>
+<gender>male</gender>
+<gender_conf>0.662328</gender_conf>
+<race>Asian</race>
+<race_conf>0.992615</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.421499 0.192118 0.049505 0.123153</position>
+<age>0-20</age>
+<age_conf>0.540222</age_conf>
+<gender>male</gender>
+<gender_conf>0.986006</gender_conf>
+<race>Asian</race>
+<race_conf>0.664854</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.738331 0.221675 0.060820 0.140394</position>
+<age>35-40</age>
+<age_conf>0.715309</age_conf>
+<gender>male</gender>
+<gender_conf>0.996339</gender_conf>
+<race>Asian</race>
+<race_conf>0.978741</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.454031 0.044335 0.050919 0.120690</position>
+<age>20-25</age>
+<age_conf>0.567062</age_conf>
+<gender>male</gender>
+<gender_conf>0.996397</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.999817</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+<face>
+<position>0.683168 0.039409 0.039604 0.081281</position>
+<age>0-20</age>
+<age_conf>0.995385</age_conf>
+<gender>male</gender>
+<gender_conf>0.824178</gender_conf>
+<race>Hispanic</race>
+<race_conf>0.55828</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>1.0</loyalty_conf>
+</face>
+</result>

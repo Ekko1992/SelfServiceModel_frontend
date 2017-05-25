@@ -18,18 +18,32 @@
 <body id="app-layout">
 <header class="insidePageHeader">
     <div class="insidePageHeaderLeft">
-        <a href="{{ url('/') }}"><img src="{{ asset('image/vmaxx_newlogo.png') }}" alt=""></a>
+        <a href="{{ url('/home') }}"><img src="{{ asset('image/vmaxx_newlogo.png') }}" alt=""></a>
     </div>
     <div class="insidePageHeaderRight">
         @if (Auth::guest())
             <p></p>
             <span>
-                    <a class="inside-page-header-register" id="header-register">Register</a>&numsp;&numsp;|&numsp; &numsp;<a class="header-login" id="header-login">Login</a>
+                    <a class="inside-page-header-register" id="header-register">Register</a>&numsp;|&numsp;<a class="header-login" id="header-login">Login</a>
                 </span>
+            <div class="insideHeaderHamburgerMenu">
+                <i class="material-icons">more_vert</i>
+            </div>
+            <ul class="mini-navigation">
+              <li><a class="inside-page-header-register" id="header-register">Register</a></li>
+              <li><a class="header-login" id="header-login">Login</a></li>
+            </ul>
         @else
-            <p>Welcome, {{ Auth::user()->name }} !</p>&nbsp;
-            <span><a class="headerRegister">My Profile</a></span>&numsp;&numsp;|&numsp;&numsp;
+            <p>Welcome, {{ Auth::user()->name }}!</p>
+            <span><a class="headerRegister">My Profile</a></span><span>&numsp;|&numsp;</span>
             <span><a class="insidePageHeaderLogin" href="{{ url('/logout') }}">Logout</a></span>
+            <div class="insideHeaderHamburgerMenu">
+                <i class="material-icons">more_vert</i>
+            </div>
+            <ul class="mini-navigation">
+              <li><a class="headerRegister">My Profile</a></li>
+              <li><a class="insidePageHeaderLogin" href="{{ url('/logout') }}">Logout</a></li>
+            </ul>
         @endif
     </div>
 </header>
@@ -43,4 +57,3 @@
 @show
 </body>
 </html>
-
