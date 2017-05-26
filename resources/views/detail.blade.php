@@ -11,7 +11,7 @@
                             <i class="material-icons">arrow_back</i>Events
                         </a>
                     </span>
-                    <div class="data-title"><span>  </span> <i class="material-icons">info_outline</i></div>
+                    <div class="data-title"><span> </span> <i class="material-icons">info_outline</i></div>
                 </div>
             </div>
             <div class="details-center-right">
@@ -20,14 +20,21 @@
                     <span class="clickHide">
                         <i class="material-icons">keyboard_arrow_up</i>
                     </span>
-                    <input type="submit" id="buttons" value="Download">
+                    <div class="downloadOptions">Download</div>
+                    <div class="layoutOptions">
+                      <input type="submit" class="optionsForDrop" value="PDF" name="checkbox">
+                      <input type="submit" class="optionsForDrop" value="XML" name="checkbox">
+                      <input type="submit" class="optionsForDrop" value="XML and PDF" name="checkbox">
+                    </div>
+                    <!-- <button type="submit" id="buttons">Download</button>
                     <select name="checkbox" id="downloadType">
-                        <option value="pz">Please select download type</option>
-                        <option value="ZIP">XML</option>
-                        <option value="PDF">PDF</option>
-                        <option value="pz">XML and PDF</option>
-                    </select>
+                      <option value="pz" disabled selected>Select File</option>
+                      <option value="XML">XML</option>
+                      <option value="PDF">PDF</option>
+                      <option value="pz">XML and PDF</option>
+                    </select> -->
                     <input type="hidden" id="img_id" name="event_id" value="{{$id}}">
+
                 </div>
                 <div class="allDataStatistics">
                     <div>
@@ -78,28 +85,30 @@
             <i class="material-icons character-Close">clear</i>
             <h3>Demographics per picture</h3>
             <div class="character-text-left">
-                <h6>Group</h6>
-                <p id="GroupNumber"></p>
-                <div class="Circular-data">
-                    <div class="Circular-data-text">
-                        <div id="circularAge"></div>
-                        <i>Age</i>
-                    </div>
-                    <div class="Circular-data-text">
-                        <div id="circularGender"></div>
-                        <i>Gender</i>
-                    </div>
-                    <div class="Circular-data-text">
-                        <div id="circularEthnicity"></div>
-                        <i>Race</i>
-                    </div>
+                <div>
+                  <h6>Group</h6>
+                  <p id="GroupNumber"></p>
+                  <div class="Circular-data">
+                      <div class="Circular-data-text">
+                          <div id="circularAge"></div>
+                          <i>Age</i>
+                      </div>
+                      <div class="Circular-data-text">
+                          <div id="circularGender"></div>
+                          <i>Gender</i>
+                      </div>
+                      <div class="Circular-data-text">
+                          <div id="circularEthnicity"></div>
+                          <i>Race</i>
+                      </div>
+                  </div>
                 </div>
                 <div id="personalData"><img src="" alt=""></div>
             </div>
             <div class="character-text-right">
                 <h6>Individual</h6>
                 <p>Select a face from the picture to view individual's metrices</p>
-             {{--   <img src="" alt="">--}}
+                {{--   <img src="" alt="">--}}
                 <canvas id="myCanvas">
 
                 </canvas>
@@ -113,7 +122,7 @@
             <i class="material-icons details-Close">clear</i>
             <div class="details-text-title">
                 <p>Pictures:&numsp;<span id="detailsImgNumber">0</span> </p>
-                <p>People detected:&numsp;<span id="detailsCharacterNumber">0</span> </p>
+                <p style="margin-left: 50px">People detected:&numsp;<span id="detailsCharacterNumber">0</span> </p>
             </div>
             <div id="selectedAge"></div>
             <div id="selectedGender"></div>
@@ -131,49 +140,41 @@
             <div></div>
         </div>
     </section>
-    @include('auth.setting')
 @endsection
 @section('pageEnd')
     @parent
     <script type="text/javascript" src="{{ asset('js/highcharts-more.js') }}"></script>
     <script type="text/javascript">
         $(function () {
-
-
             var resultsH =$(".details-center-right").height()+20;
             var detailsEventsT =$(".details-center-left-text").offset().top - 100;
-            $(".clickHide").on("click",function () {
-
-                var text=$(this).find("i").text();
-                var WalkHow =resultsH-60;
-                var muchHow =detailsEventsT - WalkHow;
-
-                if(text=="keyboard_arrow_up"){
-                    $(".details-center-right").animate({
-                        height:60
-                    },1000);
-                    $(this).find("i").text("keyboard_arrow_down");
-                    $(".details-center-left-text").animate({
-                        top:muchHow
-                    },1000)
-                } else {
-                    $(".details-center-right").animate({
-                        height:resultsH
-                    },1000);
-                    $(this).find("i").text("keyboard_arrow_up");
-                    $(".details-center-left-text").animate({
-                        top:detailsEventsT
-                    },1000)
-                }
-            });
-
-
-
-
+            // $(".clickHide").on("click",function () {
+            //
+            //     var text=$(this).find("i").text();
+            //     var WalkHow =resultsH-60;
+            //     var muchHow =detailsEventsT - WalkHow;
+            //
+            //     if(text=="keyboard_arrow_up"){
+            //         $(".details-center-right").animate({
+            //             height:60
+            //         },1000);
+            //         $(this).find("i").text("keyboard_arrow_down");
+            //         $(".details-center-left-text").animate({
+            //             top:muchHow
+            //         },1000)
+            //     } else {
+            //         $(".details-center-right").animate({
+            //             height:resultsH
+            //         },1000);
+            //         $(this).find("i").text("keyboard_arrow_up");
+            //         $(".details-center-left-text").animate({
+            //             top:detailsEventsT
+            //         },1000)
+            //     }
+            // });
 
 
             var  id = $('#img_id').val();
-            console.log(id);
             $.ajax({
                 url: '/details/' + id,
                 type: "get",
@@ -188,7 +189,7 @@
                             "<input type='checkbox' class='checkbox' name='checkboxt'>" +
                             "<img class='img-Graphical' src='" + val.img_url + "' alt=''>" +
                             "<p>" + val.img_name + "</p>"+
-                             "<i class='material-icons'>create</i>"+
+                            "<i class='material-icons'>create</i>"+
                             "</li>";
                         $(".details-center-left-text").find("ul").append(html);
                         $(".activityText").find("h1").html(val.author.title);
@@ -212,7 +213,7 @@
                     });
 
 
-                        // 点击图片获取相应的数据
+                    // 点击图片获取相应的数据
                     $(".details-center-left-text").find("ul").find("li").find("img").on("click", function () {
 
                         /*============获取图片和名称==================*/
@@ -221,8 +222,12 @@
                         $(".character-text-left").find("p").html(ptext);
                         $(".character-text-left").find("img").attr("src", imgsrc);
 
+                        var canvas = document.getElementById("myCanvas");
+                        var ctx = canvas.getContext("2d");
+                        ctx.clearRect(0,0,canvas.width,canvas.height);
+
                         /* =============显示和关闭===============*/
-                        $(".character-data").css({display: "flex"});
+                        $(".character-data").css({display: "block"});
                         $(".character-Close").on("click", function () {
                             $(".character-data").css({display: "none"})
                         });
@@ -323,13 +328,14 @@
                                 xAxis: {categories: [s[0].age, s[0].gender, s[0].race, s[0].loyalty]},
                                 bar: {dataLabels: {enabled: true}},
                                 series: [{
+                                    name: 'Number',
                                     type: 'column',
                                     colorByPoint: true,
                                     data: [
                                         {y: 0, color: "#eca865"},
                                         {y: 0, color: gendercolors},
                                         {y: 0, color: "#e6d94c"}
-                                        ],
+                                    ],
                                     showInLegend: false
                                 }],
                                 plotOptions: {
@@ -348,14 +354,48 @@
 
 
                             $(".character-text-left").find("#personalData").find("span").on("click", function () {
+
+                                var chart = Highcharts.chart('RunData', {
+                                    title: {text: ''},
+                                    subtitle: {text: ''},
+                                    xAxis: {categories: [s[0].age, s[0].gender, s[0].race, s[0].loyalty]},
+                                    bar: {dataLabels: {enabled: true}},
+                                    series: [{
+                                        name: 'Number',
+                                        type: 'column',
+                                        colorByPoint: true,
+                                        data: [
+                                            {y: 0, color: "#eca865"},
+                                            {y: 0, color: gendercolors},
+                                            {y: 0, color: "#e6d94c"}
+                                        ],
+                                        showInLegend: false
+                                    }],
+                                    plotOptions: {
+                                        series: {
+                                            dataLabels: {
+                                                align: 'left',
+                                                enabled: true
+                                            }
+                                        }
+                                    }
+                                });
+                                chart.update({
+                                    chart: {inverted: true, polar: false},
+                                    subtitle: {text: ''}
+                                });
+
+
+
+
                                 var index=$(this).index()-1;
                                 var image=$("#personalData").find("img").attr("src");
                                 var originImgWidth ;
                                 var originImgHeigh ;
 
                                 getImageWidth(image,function(w,h){
-                                  return originImgWidth = w ,
-                                   originImgHeigh = h;
+                                    return originImgWidth = w ,
+                                        originImgHeigh = h;
                                 });
 
 
@@ -368,6 +408,7 @@
                                 function drawBeauty(image){
                                     var mycv = document.getElementById("myCanvas");
                                     var myctx = mycv.getContext("2d");
+                                    myctx.clearRect(0,0,canvas.width,canvas.height);
                                     myctx.drawImage(image,
                                         imgsX,
                                         imgsY,
@@ -377,7 +418,7 @@
                                         0,
                                         300,
                                         162
-                                       );
+                                    );
                                 }
                                 function load(){
                                     var beauty = new Image();
@@ -424,12 +465,13 @@
                                     xAxis: {categories: [s[indexs].age, s[indexs].gender, s[indexs].race, s[indexs].loyalty]},
                                     bar: {dataLabels: {enabled: true}},
                                     series: [{
+                                        name: 'Number',
                                         type: 'column',
                                         colorByPoint: true,
                                         data: [{y: Number(gageValue), color: "#9ae06e"},
                                             {y: Number(ggenderValue), color: "#f05123"},
                                             {y: Number(graceValue), color: "#0a5e8b"}
-                                            ],
+                                        ],
                                         showInLegend: false
                                     }],
                                     plotOptions: {
@@ -453,9 +495,10 @@
 
                             });
                             $(".character-text-left").find("#personalData").find("span:first").trigger("click");
+
                         });
                         var size = $(".character-text-left").find("div").find("span").size();
-                            $(".character-text-left").find("#GroupNumber").html(size+"  people detected");
+                        $(".character-text-left").find("#GroupNumber").html(size+"  people detected");
                         /*****************年龄的本分比（age Percentage）**********************/
                         if (gByTwentyFive != 0) {gByTwentyFive = (gByTwentyFive / size) * 100}
                         if (gByThirty != 0) {gByThirty = (gByThirty / size) * 100}
@@ -586,7 +629,7 @@
                                 ]
                             }]
                         });
-                        // $(".character-text-left").find("div").find("span").eq(0).addClass("PersonalDetails");
+                        //$(".character-text-left").find("div").find("span").eq(0).addClass("PersonalDetails");
                         /*==============判断是否有========================*/
                         $.each(data.list, function (j, m) {
                             /***********判断是否有年龄******************/
@@ -726,7 +769,7 @@
 
                         });
                     });
-                        // 选中图片相应的数据
+                    // 选中图片相应的数据
                     $(".selected").on("click", function () {
                         /**************添加数据*************************/
                         var indexs = [];
@@ -735,10 +778,9 @@
                                 indexs.push($(this).parent().index());
                             }
                         });
-                        // if(indexs == 1){
-                        //    return false;
+                        // if(indexs == 0){
+                        //     return false;
                         // }
-
                         /*************添加样式******************/
                         $(".details-picture").css({display: "flex"});
                         // var imgH = $(".details-text").height();
@@ -824,41 +866,40 @@
                         //     }]
                         // });
                         $('#selectedGender').highcharts({
-                            chart: {
-                                plotBackgroundColor: null,
-                                plotBorderWidth: null,
-                                plotShadow: false,
-                                backgroundColor: "#fff"
-                            },
-                            title: {text: 'Gender'},
-                            tooltip: {pointFormat: '<b>{point.percentage:.1f}%</b>'},
-                            plotOptions: {
-                                pie: {
-                                    allowPointSelect: true,
-                                    cursor: 'pointer',
-                                    borderWidth: 0,
-                                    sdataLabels: {
-                                        enabled: false,
-                                        format: '{point.percentage:.1f} %',
-                                        style: {
-                                            "color": "#fff", "fontSize": "6px", "textOutline": "1px 1px contrast"
-                                        },
-                                        distance: -10,
-                                        connectorPadding: 0
-                                    },
-                                    colors: ["#f05123", "#ff9e1a"]
-                                }
-                            },
-                            series: [{
-                                type: 'pie',
-                                name: 'Browser share',
-                                data: [
-                                    ['Male', men],
-                                    ['Female', females]
-
-                                ]
-                            }]
-                        });
+                          chart: {
+                              plotBackgroundColor: null,
+                              plotBorderWidth: null,
+                              plotShadow: false,
+                              backgroundColor: "#fff"
+                          },
+                          title: {text: 'Gender'},
+                          tooltip: {pointFormat: '<b>{point.percentage:.1f}%</b>'},
+                          plotOptions: {
+                              pie: {
+                                  allowPointSelect: true,
+                                  cursor: 'pointer',
+                                  borderWidth: 0,
+                                  dataLabels: {
+                                      enabled: false,
+                                          format: '{point.percentage:.1f} %',
+                                          style: {
+                                              "color": "#fff", "fontSize": "6px", "textOutline": "1px 1px contrast"
+                                          },
+                                          distance: -10,
+                                          connectorPadding: 0
+                                  },
+                                colors: ["#f05123", "#ff9e1a"]
+                              }
+                          },
+                          series: [{
+                              type: 'pie',
+                              name: 'Browser share',
+                              data: [
+                                  ['Male', men],
+                                  ['Female', females]
+                              ]
+                          }]
+                      });
                         // 统计选中图片的种族数（race）
                         Highcharts.chart('selectedRace', {
                             title: {text: 'Race'},
@@ -898,6 +939,7 @@
                                     },
                                     yAxis: {labels: {step: 1}},
                                     series: [{
+                                        name: 'Number',
                                         type: 'column', colorByPoint: true,
                                         data: [
                                             {y: 0, color: "#d3f2c1"},
@@ -917,288 +959,6 @@
                             // 判断是否有性别
                             if (m.author.gender == 0) {
                               $('#gender').highcharts({
-                                  chart: {
-                                      plotBackgroundColor: null,
-                                      plotBorderWidth: null,
-                                      plotShadow: false,
-                                      backgroundColor: "#fff"
-                                  },
-                                  title: {text: ''},
-                                  tooltip: {pointFormat: '<b>{point.percentage:.1f}%</b>'},
-                                  plotOptions: {
-                                      pie: {
-                                          allowPointSelect: true,
-                                          cursor: 'pointer',
-                                          borderWidth: 0,
-                                          dataLabels: {
-                                              enabled: false,
-                                              format: '{point.percentage:.1f} %',
-                                              style: {
-                                                  "color": "#fff", "fontSize": "6px", "textOutline": "1px 1px contrast"
-                                              },
-                                              distance: -10,
-                                              connectorPadding: 0
-                                          },
-                                          colors: ["#f05123", "#ff9e1a"]
-                                      }
-                                  },
-                                  series: [{
-                                      type: 'pie',
-                                      name: 'Browser share',
-                                      data: [
-                                          ['Male', men],
-                                          ['Female', females]
-
-                                      ]
-                                  }]
-                              });
-                                // Highcharts.chart('selectedGender', {
-                                //     title: {text: 'Gender'},
-                                //     subtitle: {text: ''},
-                                //     xAxis: {
-                                //         categories: ['men', 'female'],
-                                //         labels: {
-                                //             rotation: 0,
-                                //             style: {fontSize: '12px', fontFamily: 'Verdana, sans-serif'}
-                                //         }
-                                //     },
-                                //     yAxis: {labels: {step: 1}},
-                                //     series: [{
-                                //         type: 'column', colorByPoint: true,
-                                //         data: [
-                                //             {y: 0, color: "#f05123"},
-                                //             {y: 0, color: "#ff9e1a"}
-                                //         ],
-                                //         showInLegend: false
-                                //     }]
-                                // });
-                            }
-                           // 判断是否有忠诚度
-                         /*   if (m.author.loyalty == 0) {
-                                Highcharts.chart('loyalty', {
-                                    title: {text: 'Loyalty'},
-                                    subtitle: {text: ''},
-                                    xAxis: {
-                                        categories: ['low', 'middle', 'high'],
-                                        labels: {
-                                            rotation: 0,
-                                            style: {
-                                                fontSize: '12px',
-                                                fontFamily: 'Verdana, sans-serif'
-                                            }
-                                        }
-                                    },
-                                    yAxis: {labels: {step: 1}},
-                                    series: [{
-                                        type: 'column',
-                                        colorByPoint: true,
-                                        data: [
-                                            {y: 0, color: "#99e4cb"}, {y: 0, color: "#58e2b4"}, {y: 0, color: "#0af0a3"}
-                                        ],
-                                        showInLegend: false
-                                    }]
-                                });
-                            }*/
-                            // 判断是否有种族
-                            if (m.author.race == 0) {
-                                Highcharts.chart('selectedRace', {
-                                    title: {text: 'Race'},
-                                    subtitle: {text: ''},
-                                    xAxis: {
-                                        categories: ['Asian', 'Hispanic', 'Africa', 'Caucasian'],
-                                        labels: {
-                                            rotation: 0,
-                                            style: {fontSize: '12px', fontFamily: 'Verdana, sans-serif'}
-                                        }
-                                    },
-                                    yAxis: {labels: {step: 1}},
-                                    series: [{
-                                        type: 'column',
-                                        colorByPoint: true,
-                                        data: [
-                                            {y: 0, color: "#c3e4f7"},
-                                            {y: 0, color: "#77c4ed"},
-                                            {y: 0, color: "#1f8bc4"},
-                                            {y: 0, color: "#0a5e8b"}
-                                        ],
-                                        showInLegend: false
-                                    }]
-                                });
-                            }
-                        });
-                    });
-                        // 所有的图片数据
-                    $.each(data.list_a, function (k, y) {
-                        $.each(y.face, function (s, z) {
-                            if (z.gender == "female") {females = females + 1;}
-                            if (z.gender == "male") {men = men + 1;}
-                            if (z.loyalty == "low") {low = low + 1;}
-                            if (z.loyalty == "middle") {middle = middle + 1;}
-                            if (z.loyalty == "high") {high = high + 1;}
-                            if (z.race == "Caucasian") {Caucasian = Caucasian + 1;}
-                            if (z.race == "African") {Africa = Africa + 1;}
-                            if (z.race == "Asian") {Asian = Asian + 1;}
-                            if (z.race == "Hispanic") {Hispanic = Hispanic + 1;}
-                            if (z.age == "20-25") {ByTwentyFive = ByTwentyFive + 1}
-                            if (z.age == "25-30") {ByThirty = ByThirty + 1}
-                            if (z.age == "30-35") {ByThirtyFive = ByThirtyFive + 1}
-                            if (z.age == "35-40") {ByForty = ByForty + 1}
-                            if (z.age == "40-45") {ByFortyFive = ByFortyFive + 1}
-                            if (z.age == "45-50") {ByFifty = ByFifty + 1}
-                            if (z.age == "50-55") {ByFiftyFive = ByFiftyFive + 1}
-                            if (z.age == "55-60") {BySixty = BySixty + 1}
-                            if (z.age == "0-20") {agetwenty = agetwenty + 1}
-                            if (z.age == ">60") {thanSixty = thanSixty + 1}
-                        })
-                    });
-                        // 年龄 age
-                   Highcharts.chart('detailsAge', {
-
-                        title: {text: ''},
-                        subtitle: {text: ''},
-                        xAxis: {
-                            categories: ['<20', '20-25', '25-30', '30-35', '35-40', '40-45', '45-50', '50-55', '55-60', '>60'],
-                            labels: {rotation: 90, style: {fontSize: '12px', fontFamily: 'Verdana, sans-serif'}}
-                        },
-                        yAxis: {
-                            allowDecimals: false
-                        },
-                        series: [{
-                            name: 'Number',
-                            type: 'column',
-                            colorByPoint: true,
-                            data: [
-                                {y: agetwenty, color: "#d3f2c1"},
-                                {y: ByTwentyFive, color: "#ade58a"},
-                                {y: ByThirty, color: "#9ae06e"},
-                                {y: ByThirtyFive, color: "#78d43b"},
-                                {y: ByForty, color: "#64c020"},
-                                {y: ByFortyFive, color: "#5ab01c"},
-                                {y: ByFifty, color: "#519e1a"},
-                                {y: ByFiftyFive, color: "#488d17"},
-                                {y: BySixty, color: "#346710"},
-                                {y: thanSixty, color: "#204109"}
-                            ],
-                            showInLegend: false
-                        }]
-                    });
-                        // 性别 gender
-                    $('#gender').highcharts({
-                        chart: {
-                            plotBackgroundColor: null,
-                            plotBorderWidth: null,
-                            plotShadow: false,
-                            backgroundColor: "#fff"
-                        },
-                        title: {text: ''},
-                        tooltip: {pointFormat: '<b>{point.percentage:.1f}%</b>'},
-                        plotOptions: {
-                            pie: {
-                                allowPointSelect: true,
-                                cursor: 'pointer',
-                                borderWidth: 0,
-                                dataLabels: {
-                                    enabled: false,
-                                    format: '{point.percentage:.1f} %',
-                                    style: {
-                                        "color": "#fff", "fontSize": "6px", "textOutline": "1px 1px contrast"
-                                    },
-                                    distance: -10,
-                                    connectorPadding: 0
-                                },
-                                colors: ["#f05123", "#ff9e1a"]
-                            }
-                        },
-                        series: [{
-                            type: 'pie',
-                            name: 'Browser share',
-                            data: [
-                                ['Male', men],
-                                ['Female', females]
-
-                            ]
-                        }]
-                    });
-                        // 种族 Race
-                    Highcharts.chart('race', {
-                        title: {text: ''},
-                        subtitle: {text: ''},
-                        xAxis: {
-                            categories: ['Asian', 'Hispanic', 'Africa', 'Caucasian'],
-                            labels: {rotation: 0, style: {fontSize: '12px', fontFamily: 'Verdana, sans-serif'}}
-                        },
-                        yAxis: {labels: {step: 1}},
-                        series: [{
-                            type: 'column',
-                            colorByPoint: true,
-                            data: [
-                                {y: Asian, color: "#c3e4f7"},
-                                {y: Hispanic, color: "#77c4ed"},
-                                {y: Africa, color: "#1f8bc4"},
-                                {y: Caucasian, color: "#0a5e8b"}
-                            ],
-                            showInLegend: false
-                        }]
-                    });
-                        // 忠诚度 loyalty
-                    /*  Highcharts.chart('loyalty', {
-                     title: {text: 'Loyalty'},
-                     subtitle: {text: ''},
-                     xAxis: {
-                     categories: ['low', 'middle', 'high'],
-                     labels: {
-                     rotation: 0,
-                     style: {
-                     fontSize: '12px',
-                     fontFamily: 'Verdana, sans-serif'
-                     }
-                     }
-                     },
-                     yAxis: {labels: {step: 1}},
-                     series: [{
-                     type: 'column',
-                     colorByPoint: true,
-                     data: [
-                     {y: low, color: "#99e4cb"}, {y: middle, color: "#58e2b4"}, {y: high, color: "#0af0a3"}
-                     ],
-                     showInLegend: false
-                     }]
-                     });*/
-                        // 循环判断是否有数据
-                    $.each(data.list, function (j, m) {
-                        // 判断是否有年龄
-                        if (m.author.average == 0) {
-                            Highcharts.chart('detailsAge', {
-                                title: {text: ''},
-                                subtitle: {text: ''},
-                                xAxis: {
-                                    categories: ['<20', '20-25', '25-30', '30-35', '35-40', '40-45', '45-50', '50-55', '55-60', '>60'],
-                                    labels: {rotation: 90, style: {fontSize: '12px', fontFamily: 'Verdana, sans-serif'}}
-                                },
-                                yAxis: {labels: {step: 1}},
-                                series: [{
-                                    type: 'column',
-                                    colorByPoint: true,
-                                    data: [
-                                        {y: 0, color: "#f0d6a4"},
-                                        {y: 0, color: "#f8c35e"},
-                                        {y: 0, color: "#f7b63a"},
-                                        {y: 0, color: "#e49909"},
-                                        {y: 0, color: "#cd8907"},
-                                        {y: 0, color: "#b47805"},
-                                        {y: 0, color: "#a16b04"},
-                                        {y: 0, color: "#8a5b02"},
-                                        {y: 0, color: "#764f03"},
-                                        {y: 0, color: "#5c3f06"}
-                                    ],
-                                    showInLegend: false
-                                }]
-                            });
-                        }
-                        // 判断是否有性别
-                        if (m.author.gender == 0) {
-
-                            $('#gender').highcharts({
                                 chart: {
                                     plotBackgroundColor: null,
                                     plotBorderWidth: null,
@@ -1228,13 +988,301 @@
                                     type: 'pie',
                                     name: 'Browser share',
                                     data: [
-                                        ['Male', 0],
-                                        ['Female', 0]
+                                        ['Male', men],
+                                        ['Female', females]
 
                                     ]
                                 }]
                             });
+                          }
+
+                                // Highcharts.chart('selectedGender', {
+                                //     title: {text: 'Gender'},
+                                //     subtitle: {text: ''},
+                                //     xAxis: {
+                                //         categories: ['men', 'female'],
+                                //         labels: {
+                                //             rotation: 0,
+                                //             style: {fontSize: '12px', fontFamily: 'Verdana, sans-serif'}
+                                //         }
+                                //     },
+                                //     yAxis: {labels: {step: 1}},
+                                //     series: [{
+                                //         name: 'Number',
+                                //         type: 'column', colorByPoint: true,
+                                //         data: [
+                                //             {y: 0, color: "#f05123"},
+                                //             {y: 0, color: "#ff9e1a"}
+                                //         ],
+                                //         showInLegend: false
+                                //     }]
+                                // });
+                            // 判断是否有忠诚度
+                            /*   if (m.author.loyalty == 0) {
+                             Highcharts.chart('loyalty', {
+                             title: {text: 'Loyalty'},
+                             subtitle: {text: ''},
+                             xAxis: {
+                             categories: ['low', 'middle', 'high'],
+                             labels: {
+                             rotation: 0,
+                             style: {
+                             fontSize: '12px',
+                             fontFamily: 'Verdana, sans-serif'
+                             }
+                             }
+                             },
+                             yAxis: {labels: {step: 1}},
+                             series: [{
+                             type: 'column',
+                             colorByPoint: true,
+                             data: [
+                             {y: 0, color: "#99e4cb"}, {y: 0, color: "#58e2b4"}, {y: 0, color: "#0af0a3"}
+                             ],
+                             showInLegend: false
+                             }]
+                             });
+                             }*/
+                            // 判断是否有种族
+                            if (m.author.race == 0) {
+                                Highcharts.chart('selectedRace', {
+                                    title: {text: 'Race'},
+                                    subtitle: {text: ''},
+                                    xAxis: {
+                                        categories: ['Asian', 'Hispanic', 'Africa', 'Caucasian'],
+                                        labels: {
+                                            rotation: 0,
+                                            style: {fontSize: '12px', fontFamily: 'Verdana, sans-serif'}
+                                        }
+                                    },
+                                    yAxis: {labels: {step: 1}},
+                                    series: [{
+                                        name: 'Number',
+                                        type: 'column',
+                                        colorByPoint: true,
+                                        data: [
+                                            {y: 0, color: "#c3e4f7"},
+                                            {y: 0, color: "#77c4ed"},
+                                            {y: 0, color: "#1f8bc4"},
+                                            {y: 0, color: "#0a5e8b"}
+                                        ],
+                                        showInLegend: false
+                                    }]
+                                });
+                            }
+                        });
+                    });
+                    // 所有的图片数据
+                    $.each(data.list_a, function (k, y) {
+                        $.each(y.face, function (s, z) {
+                            if (z.gender == "female") {females = females + 1;}
+                            if (z.gender == "male") {men = men + 1;}
+                            if (z.loyalty == "low") {low = low + 1;}
+                            if (z.loyalty == "middle") {middle = middle + 1;}
+                            if (z.loyalty == "high") {high = high + 1;}
+                            if (z.race == "Caucasian") {Caucasian = Caucasian + 1;}
+                            if (z.race == "African") {Africa = Africa + 1;}
+                            if (z.race == "Asian") {Asian = Asian + 1;}
+                            if (z.race == "Hispanic") {Hispanic = Hispanic + 1;}
+                            if (z.age == "20-25") {ByTwentyFive = ByTwentyFive + 1}
+                            if (z.age == "25-30") {ByThirty = ByThirty + 1}
+                            if (z.age == "30-35") {ByThirtyFive = ByThirtyFive + 1}
+                            if (z.age == "35-40") {ByForty = ByForty + 1}
+                            if (z.age == "40-45") {ByFortyFive = ByFortyFive + 1}
+                            if (z.age == "45-50") {ByFifty = ByFifty + 1}
+                            if (z.age == "50-55") {ByFiftyFive = ByFiftyFive + 1}
+                            if (z.age == "55-60") {BySixty = BySixty + 1}
+                            if (z.age == "0-20") {agetwenty = agetwenty + 1}
+                            if (z.age == ">60") {thanSixty = thanSixty + 1}
+                        })
+                    });
+                    // 年龄 age
+                    Highcharts.chart('detailsAge', {
+
+                        title: {text: ''},
+                        subtitle: {text: ''},
+                        xAxis: {
+                            categories: ['<20', '20-25', '25-30', '30-35', '35-40', '40-45', '45-50', '50-55', '55-60', '>60'],
+                            labels: {rotation: 90, style: {fontSize: '12px', fontFamily: 'Verdana, sans-serif'}}
+                        },
+                        yAxis: {
+                            allowDecimals: false
+                        },
+                        series: [{
+                            name: 'Number',
+                            type: 'column',
+                            colorByPoint: true,
+                            data: [
+                                {y: agetwenty, color: "#d3f2c1"},
+                                {y: ByTwentyFive, color: "#ade58a"},
+                                {y: ByThirty, color: "#9ae06e"},
+                                {y: ByThirtyFive, color: "#78d43b"},
+                                {y: ByForty, color: "#64c020"},
+                                {y: ByFortyFive, color: "#5ab01c"},
+                                {y: ByFifty, color: "#519e1a"},
+                                {y: ByFiftyFive, color: "#488d17"},
+                                {y: BySixty, color: "#346710"},
+                                {y: thanSixty, color: "#204109"}
+                            ],
+                            showInLegend: false
+                        }]
+                    });
+                    // 性别 gender
+                    $('#gender').highcharts({
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            backgroundColor: "#fff"
+                        },
+                        title: {text: ''},
+                        tooltip: {pointFormat: '<b>{point.percentage:.1f}%</b>'},
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                borderWidth: 0,
+                                dataLabels: {
+                                    enabled: false,
+                                    format: '{point.percentage:.1f} %',
+                                    style: {
+                                        "color": "#fff", "fontSize": "6px", "textOutline": "1px 1px contrast"
+                                    },
+                                    distance: -10,
+                                    connectorPadding: 0
+                                },
+                                // showInLegend: true,
+                                colors: ["#f05123", "#ff9e1a"]
+                            }
+                        },
+                        series: [{
+                            type: 'pie',
+                            name: 'Number',
+                            data: [
+                                ['Male', men],
+                                ['Female', females]
+
+                            ]
+                        }]
+                    });
+                    // 种族 Race
+                    Highcharts.chart('race', {
+                        title: {text: ''},
+                        subtitle: {text: ''},
+                        xAxis: {
+                            categories: ['Asian', 'Hispanic', 'Africa', 'Caucasian'],
+                            labels: {rotation: 0, style: {fontSize: '12px', fontFamily: 'Verdana, sans-serif'}}
+                        },
+                        yAxis: {labels: {step: 1}},
+                        series: [{
+                            name: 'Number',
+                            type: 'column',
+                            colorByPoint: true,
+                            data: [
+                                {y: Asian, color: "#c3e4f7"},
+                                {y: Hispanic, color: "#77c4ed"},
+                                {y: Africa, color: "#1f8bc4"},
+                                {y: Caucasian, color: "#0a5e8b"}
+                            ],
+                            showInLegend: false
+                        }]
+                    });
+                    // 忠诚度 loyalty
+                    /*  Highcharts.chart('loyalty', {
+                     title: {text: 'Loyalty'},
+                     subtitle: {text: ''},
+                     xAxis: {
+                     categories: ['low', 'middle', 'high'],
+                     labels: {
+                     rotation: 0,
+                     style: {
+                     fontSize: '12px',
+                     fontFamily: 'Verdana, sans-serif'
+                     }
+                     }
+                     },
+                     yAxis: {labels: {step: 1}},
+                     series: [{
+                     type: 'column',
+                     colorByPoint: true,
+                     data: [
+                     {y: low, color: "#99e4cb"}, {y: middle, color: "#58e2b4"}, {y: high, color: "#0af0a3"}
+                     ],
+                     showInLegend: false
+                     }]
+                     });*/
+                    // 循环判断是否有数据
+                    $.each(data.list, function (j, m) {
+                        // 判断是否有年龄
+                        if (m.author.average == 0) {
+                            Highcharts.chart('detailsAge', {
+                                title: {text: ''},
+                                subtitle: {text: ''},
+                                xAxis: {
+                                    categories: ['<20', '20-25', '25-30', '30-35', '35-40', '40-45', '45-50', '50-55', '55-60', '>60'],
+                                    labels: {rotation: 90, style: {fontSize: '12px', fontFamily: 'Verdana, sans-serif'}}
+                                },
+                                yAxis: {labels: {step: 1}},
+                                series: [{
+                                    name: 'Number',
+                                    type: 'column',
+                                    colorByPoint: true,
+                                    data: [
+                                        {y: 0, color: "#f0d6a4"},
+                                        {y: 0, color: "#f8c35e"},
+                                        {y: 0, color: "#f7b63a"},
+                                        {y: 0, color: "#e49909"},
+                                        {y: 0, color: "#cd8907"},
+                                        {y: 0, color: "#b47805"},
+                                        {y: 0, color: "#a16b04"},
+                                        {y: 0, color: "#8a5b02"},
+                                        {y: 0, color: "#764f03"},
+                                        {y: 0, color: "#5c3f06"}
+                                    ],
+                                    showInLegend: false
+                                }]
+                            });
                         }
+                        // 判断是否有性别
+                        // if (m.author.gender == 0) {
+                        //
+                        //     $('#gender').highcharts({
+                        //         chart: {
+                        //             plotBackgroundColor: null,
+                        //             plotBorderWidth: null,
+                        //             plotShadow: false,
+                        //             backgroundColor: "#fff"
+                        //         },
+                        //         title: {text: ''},
+                        //         tooltip: {pointFormat: '<b>{point.percentage:.1f}%</b>'},
+                        //         plotOptions: {
+                        //             pie: {
+                        //                 allowPointSelect: true,
+                        //                 cursor: 'pointer',
+                        //                 borderWidth: 0,
+                        //                 dataLabels: {
+                        //                     enabled: false,
+                        //                     format: '{point.percentage:.1f} %',
+                        //                     style: {
+                        //                         "color": "#fff", "fontSize": "6px", "textOutline": "1px 1px contrast"
+                        //                     },
+                        //                     distance: -10,
+                        //                     connectorPadding: 0
+                        //                 },
+                        //                 colors: ["#f05123", "#ff9e1a"]
+                        //             }
+                        //         },
+                                // series: [{
+                                //     type: 'pie',
+                                //     name: 'Number',
+                                //     data: [
+                                //         ['Male', 0],
+                                //         ['Female', 0]
+                                //
+                                //     ]
+                                // }]
+                        //     });
+                        // }
                         // 判断是否有种族
                         if (m.author.race == 0) {
                             Highcharts.chart('race', {
@@ -1246,6 +1294,7 @@
                                 },
                                 yAxis: {labels: {step: 1}},
                                 series: [{
+                                    name: 'Number',
                                     type: 'column', colorByPoint: true,
                                     data: [
                                         {y: 0, color: "#c3e4f7"},
@@ -1258,31 +1307,31 @@
                             });
                         }
                         /*/!***********判断是否有忠诚度******************!/
-                        if (m.author.loyalty == 0) {
-                            Highcharts.chart('loyalty', {
-                                title: {text: 'Loyalty'},
-                                subtitle: {text: ''},
-                                xAxis: {
-                                    categories: ['low', 'middle', 'high'],
-                                    labels: {
-                                        rotation: 0,
-                                        style: {
-                                            fontSize: '12px',
-                                            fontFamily: 'Verdana, sans-serif'
-                                        }
-                                    }
-                                },
-                                yAxis: {labels: {step: 1}},
-                                series: [{
-                                    type: 'column',
-                                    colorByPoint: true,
-                                    data: [
-                                        {y: 0, color: "#99e4cb"}, {y: 0, color: "#58e2b4"}, {y: 0, color: "#0af0a3"}
-                                    ],
-                                    showInLegend: false
-                                }]
-                            });
-                        }*/
+                         if (m.author.loyalty == 0) {
+                         Highcharts.chart('loyalty', {
+                         title: {text: 'Loyalty'},
+                         subtitle: {text: ''},
+                         xAxis: {
+                         categories: ['low', 'middle', 'high'],
+                         labels: {
+                         rotation: 0,
+                         style: {
+                         fontSize: '12px',
+                         fontFamily: 'Verdana, sans-serif'
+                         }
+                         }
+                         },
+                         yAxis: {labels: {step: 1}},
+                         series: [{
+                         type: 'column',
+                         colorByPoint: true,
+                         data: [
+                         {y: 0, color: "#99e4cb"}, {y: 0, color: "#58e2b4"}, {y: 0, color: "#0af0a3"}
+                         ],
+                         showInLegend: false
+                         }]
+                         });
+                         }*/
                     });
                     var imgNumber= $(".details-center-left-text").find("li").size();
                     var allCharacterNumber = females+men;
@@ -1292,8 +1341,8 @@
                     $("#NoRepeatCharacters").text(high);
                     $("#RepeatCharacters").text(RepeatCharacters);
                 },
-                error: function () {
-                    alert("Failed to load")
+                error: function (jqXHR,textStatus,errorThrown) {
+                    alert('Exception:'+errorThrown)
                 }
             });
 

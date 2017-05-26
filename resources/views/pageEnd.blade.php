@@ -1,6 +1,6 @@
 <footer>
     <div></div>
-    Property of Vmaxx inc.
+    Property of VMaxx inc.
 </footer>
 <!-- JavaScripts -->
 <script type="text/javascript" src="{{ asset('js/jquery-1.9.1.min.js') }}"></script>

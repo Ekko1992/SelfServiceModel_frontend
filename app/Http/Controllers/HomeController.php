@@ -276,9 +276,11 @@ class HomeController extends Controller
 
     public function export(Request $request)
     {
+
         $checkbox = $request->input('checkbox');
         $id = $request->input('event_id');
         if($checkbox == 'PDF'){
+
             //download to PDF
             $s3 = App::make('aws')->createClient('s3');
             $result = $s3->getObject(array(
@@ -294,7 +296,7 @@ class HomeController extends Controller
             header("Content-Transfer-Encoding: binary"); // 告诉浏览器，这是二进制文件
             header('Content-Length: ' . filesize($filename)); // 告诉浏览器，文件大小
             @readfile($filename);//输出文件;
-        }elseif ($checkbox == 'ZIP'){
+        }elseif ($checkbox == 'XML'){
             //download to ZIP
             $filename = str_replace('\\', '/', public_path()) . '/downloads_xml/' . date('YmdHis') . '.zip'; // 最终生成的文件名（含路径）
             // 生成文件

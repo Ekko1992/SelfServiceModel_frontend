@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+<face>
+<position>0.691667 0.249219 0.055729 0.110937</position>
+<age>40-45</age>
+<age_conf>0.719769</age_conf>
+<gender>female</gender>
+<gender_conf>0.999935</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.999511</race_conf>
+<loyalty>middle</loyalty>
+<loyalty_conf>0.971264367816</loyalty_conf>
+</face>
+<face>
+<position>0.473958 0.257031 0.046354 0.087500</position>
+<age>35-40</age>
+<age_conf>0.817741</age_conf>
+<gender>female</gender>
+<gender_conf>0.998882</gender_conf>
+<race>Hispanic</race>
+<race_conf>0.671899</race_conf>
+<loyalty>low</loyalty>
+<loyalty_conf>0.92337164751</loyalty_conf>
+</face>
+<face>
+<position>0.140625 0.270313 0.041667 0.084375</position>
+<age>25-30</age>
+<age_conf>0.437628</age_conf>
+<gender>female</gender>
+<gender_conf>0.99991</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.997974</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>0.808429118774</loyalty_conf>
+</face>
+<face>
+<position>0.582292 0.286719 0.052604 0.114844</position>
+<age>0-20</age>
+<age_conf>0.998332</age_conf>
+<gender>female</gender>
+<gender_conf>0.962925</gender_conf>
+<race>African</race>
+<race_conf>0.994162</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>0.92337164751</loyalty_conf>
+</face>
+<face>
+<position>0.375521 0.242969 0.045312 0.089844</position>
+<age>30-35</age>
+<age_conf>0.425878</age_conf>
+<gender>female</gender>
+<gender_conf>0.994529</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.996341</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>0.157088122605</loyalty_conf>
+</face>
+<face>
+<position>0.227604 0.255469 0.035937 0.071875</position>
+<age>35-40</age>
+<age_conf>0.471204</age_conf>
+<gender>female</gender>
+<gender_conf>0.999946</gender_conf>
+<race>Asian</race>
+<race_conf>0.878398</race_conf>
+<loyalty>low</loyalty>
+<loyalty_conf>0.961685823755</loyalty_conf>
+</face>
+<face>
+<position>0.305729 0.285156 0.039583 0.079687</position>
+<age>0-20</age>
+<age_conf>0.990171</age_conf>
+<gender>female</gender>
+<gender_conf>0.997746</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.997932</race_conf>
+<loyalty>low</loyalty>
+<loyalty_conf>0.961685823755</loyalty_conf>
+</face>
+</result>

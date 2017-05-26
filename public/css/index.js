@@ -95,6 +95,10 @@ $(function () {
 
 
 
+
+
+
+
     /***********************全选 全不选 以及删除*********************************/
     $(".select-text").on("click", function () {
         var size=$(".PictureShow").find("li").size();

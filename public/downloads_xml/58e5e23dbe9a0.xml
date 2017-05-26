@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+<face>
+<position>0.209375 0.357812 0.033333 0.063281</position>
+<age>25-30</age>
+<age_conf>0.925154</age_conf>
+<gender>female</gender>
+<gender_conf>0.999998</gender_conf>
+<race>Asian</race>
+<race_conf>0.665303</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>0.366666666667</loyalty_conf>
+</face>
+<face>
+<position>0.242188 0.494531 0.035937 0.071094</position>
+<age>0-20</age>
+<age_conf>0.999724</age_conf>
+<gender>female</gender>
+<gender_conf>0.724438</gender_conf>
+<race>Asian</race>
+<race_conf>0.830509</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>0.8</loyalty_conf>
+</face>
+<face>
+<position>0.283854 0.362500 0.035937 0.073438</position>
+<age>0-20</age>
+<age_conf>0.999558</age_conf>
+<gender>female</gender>
+<gender_conf>0.889123</gender_conf>
+<race>African</race>
+<race_conf>0.440549</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>0.2</loyalty_conf>
+</face>
+<face>
+<position>0.332292 0.445312 0.039583 0.079687</position>
+<age>0-20</age>
+<age_conf>0.993675</age_conf>
+<gender>female</gender>
+<gender_conf>0.991407</gender_conf>
+<race>African</race>
+<race_conf>0.999733</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>0.8</loyalty_conf>
+</face>
+</result>

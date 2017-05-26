@@ -136,7 +136,7 @@
                 var password=$("#settingPassword").val();
                 var text=$(this).parent().find("p");
                 if($(this).val()!=password){
-                    text.css({display:"block"}).html("Two passwords are not the same");
+                    text.css({display:"block"}).html("Passwords does not match, please confirm the password!");
                     return false;
                 }else {
                     text.css({display:"none"})
@@ -177,7 +177,7 @@
                 var password=$("#settingPassword").val();
                 if($("#settingPasswordConfirm").val()!=password){
                     var text=$("#settingPasswordConfirm").parent().find("p");
-                    text.css({display:"block"}).html("Two passwords are not the same");
+                    text.css({display:"block"}).html("Passwords does not match, please confirm the password!");
                     return false;
                 }
 

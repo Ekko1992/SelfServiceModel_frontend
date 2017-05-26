@@ -15,20 +15,25 @@
 <body id="app-layout">
 <header>
     <div class="header-left">
-        <a href="{{ url('/') }}"><img src="{{ asset('image/vmaxx_newlogo.png') }}" alt=""></a>
+        <a href="{{ url('/home') }}"><img src="{{ asset('image/vmaxx_newlogo.png') }}" alt=""></a>
     </div>
     <div class="header-right">
         @if (Auth::guest())
-            <p></p>
-            <span>
-                <a class="header-register" id="header-register">Register</a>&numsp;&numsp;|&numsp; &numsp;
+            <div>
+                <a class="header-register" id="header-register">Register</a>&numsp;|&numsp;
                 <a class="header-login" id="header-login">Login</a>
-            </span>
+            </div>
         @else
             <p>Welcome, {{ Auth::user()->name }} !</p>
-            <span><a class="header-register settingDate" >My Profile</a></span><div>&numsp;&numsp;
-            |&numsp;&numsp;</div>
-            <span><a class="header-login" href="{{ url('/logout') }}">Logout</a></span>
+            <span><a class="headerRegister">My Profile</a></span><span>&numsp;|&numsp;</span>
+            <span><a class="insidePageHeaderLogin" href="{{ url('/logout') }}">Logout</a></span>
+            <div class="insideHeaderHamburgerMenu">
+                <i class="material-icons">more_vert</i>
+            </div>
+            <ul class="mini-navigation">
+              <li class="headerRegister"><a>My Profile</a></li>
+              <li><a class="insidePageHeaderLogin"  href="{{ url('/logout') }}">Logout</a></li>
+            </ul>
         @endif
     </div>
 </header>
@@ -77,12 +82,13 @@
 <input type="hidden" value="{{csrf_token()}}" id="token">
 <footer>
     <div></div>
-    Property of Vmaxx inc.
+    Property of VMaxx inc.
 </footer>
 </body>
 </html>
 <!-- JavaScripts -->
 <script type="text/javascript" src="{{ asset('js/jquery-1.9.1.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/jquery.form.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.cookie.js') }}"></script>
+
 @section('content')

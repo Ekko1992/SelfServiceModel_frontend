@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+<face>
+<position>0.428646 0.422656 0.044792 0.090625</position>
+<age>20-25</age>
+<age_conf>0.919222</age_conf>
+<gender>female</gender>
+<gender_conf>0.999982</gender_conf>
+<race>African</race>
+<race_conf>0.999925</race_conf>
+<loyalty>low</loyalty>
+<loyalty_conf>0.966666666667</loyalty_conf>
+</face>
+<face>
+<position>0.383854 0.242969 0.049479 0.085938</position>
+<age>30-35</age>
+<age_conf>0.620774</age_conf>
+<gender>female</gender>
+<gender_conf>0.871977</gender_conf>
+<race>Caucasian</race>
+<race_conf>0.414682</race_conf>
+<loyalty>high</loyalty>
+<loyalty_conf>0.866666666667</loyalty_conf>
+</face>
+</result>
