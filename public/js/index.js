@@ -93,7 +93,7 @@ $(function () {
 
     $(".promptText").find("i").on("click",function () {
        $(".promptProgress").fadeOut();
-       
+
     });
 
     $("#forget-return").on("click",function () {
@@ -111,12 +111,20 @@ $(function () {
     $(".mini-navigation").find("li").on("click",function(){
       $(".mini-navigation").toggle();
     })
-    $(".downloadOptions").on("click", function(){
+    $(".downloadOptions").on("click", function(e){
       $(".layoutOptions").toggle();
+      e.preventDefault();
+    })
+    $(document).click(function(e){
+      if(!$(e.target).closest('.downloadOptions, .layoutOptions').length){
+          $(".layoutOptions").hide();
+      }
     })
     $(".optionsForDrop").on("click", function(){
       $(".layoutOptions").toggle();
     })
+
+
     /***********************全选 全不选 以及删除*********************************/
     $(".select-text").on("click", function () {
         var size=$(".PictureShow").find("li").size();
