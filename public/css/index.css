@@ -89,7 +89,7 @@ footer{
     z-index: 999;
     display: none;
 }
-#login-style,#register-style,#setting-style, #forgetPassword, #Agreement-style,{
+#login-style,#register-style,#setting-style, #forgetPassword, #Agreement-style{
     position: absolute;
     width: 480px;
     left:50%;
@@ -154,6 +154,7 @@ footer{
   height: 440px;
   margin-top: -220px;
   margin-left: -240px;
+
 }
 #Agreement-style h1{
   padding: 20px 0 0 25%;
@@ -1927,7 +1928,7 @@ form:nth-child(3){
 .details-text{
   height: 300px;
   background-color: #fff;
-  position:relative;
+  position:absolute;
   z-index: 20;
   padding: 15px 0px;
   max-width: 728px;

@@ -163,6 +163,7 @@
                 }
             });
             var  id = $('#img_id').val();
+            console.log(id);
             $.ajax({
                 url: '/details/' + id,
                 type: "get",
