@@ -139,11 +139,33 @@ class HomeController extends Controller
         return view('detail', compact('id'));
     }
 
-    public function details( $id)
+    //    public function details( $id)
+//    {
+//        //dowlond s3
+//        $list['list'] = image::where('event_id', $id)->where('user_id', Auth::user()->id)->with('author')->get();
+//        foreach ($list['list'] as $value) {
+//            $fingerprint = explode('.', $value->fingerprint)[0];
+//            //$content = iconv("utf-8", "gb2312//IGNORE", $value->img_name);
+//            if (!file_exists(str_replace('\\', '/', public_path()) . '/downloads_xml/' . $fingerprint . '.xml')) {
+//                $s3 = App::make('aws')->createClient('s3');
+//                $result = $s3->getObject(array(
+//                    'Bucket' => 'vmaxx1',
+//                    'Key' => 'agel/' . $fingerprint . '.xml',
+//                    'SaveAs' => str_replace('\\', '/', public_path()) . '/downloads_xml/' . $fingerprint . '.xml',
+//                ));
+//            }
+//            $list['list_a'][] = simplexml_load_file(str_replace('\\', '/', public_path()) . '/downloads_xml/' . $fingerprint . '.xml');
+//        }
+//        return Response::json($list);
+//    }
+
+    public function details($id)
     {
         //dowlond s3
-        $list['list'] = image::where('event_id', $id)->where('user_id', Auth::user()->id)->with('author')->get();
-        foreach ($list['list'] as $value) {
+        $menu = [];
+        $list = image::where('event_id', $id)->where('user_id', Auth::user()->id)->with('author')->get();
+        foreach ($list as $value) {
+            $child = $value;
             $fingerprint = explode('.', $value->fingerprint)[0];
             //$content = iconv("utf-8", "gb2312//IGNORE", $value->img_name);
             if (!file_exists(str_replace('\\', '/', public_path()) . '/downloads_xml/' . $fingerprint . '.xml')) {
@@ -154,9 +176,10 @@ class HomeController extends Controller
                     'SaveAs' => str_replace('\\', '/', public_path()) . '/downloads_xml/' . $fingerprint . '.xml',
                 ));
             }
-            $list['list_a'][] = simplexml_load_file(str_replace('\\', '/', public_path()) . '/downloads_xml/' . $fingerprint . '.xml');
+            $child['child'] = simplexml_load_file(str_replace('\\', '/', public_path()) . '/downloads_xml/' . $fingerprint . '.xml');
+            $menu[] = $child;
         }
-        return Response::json($list);
+        return Response::json($menu);
     }
 
     public function payment(Request $request)

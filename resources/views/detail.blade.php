@@ -22,10 +22,10 @@
                     </span>
                     <input type="submit" id="buttons" value="Download">
                     <select name="checkbox" id="downloadType">
-                        <option value="0">Please select download type</option>
-                        <option value="1">XML</option>
-                        <option value="2">PDF</option>
-                        <option value="3">XML and PDF</option>
+                        <option value="pz">Please select download type</option>
+                        <option value="ZIP">XML</option>
+                        <option value="PDF">PDF</option>
+                        <option value="pz">XML and PDF</option>
                     </select>
                     <input type="hidden" id="img_id" name="event_id" value="{{$id}}">
                 </div>
